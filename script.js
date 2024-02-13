@@ -67,6 +67,7 @@ function spawnImage(imageSrc) {
 
   // Pause animation on hover.
   image.addEventListener("mouseenter", () => (fallRate = 0));
+  image.addEventListener("click", () => (fallRate = 0));
   image.addEventListener(
     "mouseleave",
     () => (fallRate = 0.2 + Math.random() * 0.9)
