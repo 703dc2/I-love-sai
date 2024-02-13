@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const images = ["pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.jpg", "pic5.jpg", "pic6.jpg", "pic7.jpg", "pic8.jpg", "pic9.jpg", "pic10.jpg", "pic11.jpg", "pic12.jpg", "pic13.jpg", "pic14.jpg", "pic15.jpg", "pic16.jpg", "pic17.jpg", "pic18.jpg", "pic19.jpg", "pic20.jpg", "pic21.jpg", "pic22.jpg", "pic23.jpg", "pic24.jpg", "pic25.jpg", "pic26.jpg", "pic27.jpg", "pic28.jpg", "pic29.jpg", "pic30.jpg", "pic31.jpg", "pic32.jpg", "pic33.jpg", "pic34.jpg", "pic35.jpg", "pic36.jpg", "pic37.jpg"];  // List your images here, ensure the path is correct.
+  const images = ["pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.JPG", "pic5.JPG", "pic6.jpg", "pic7.JPG", "pic8.JPG", "pic9.JPG", "pic10.JPG", "pic11.JPG", "pic12.JPG", "pic13.JPG", "pic14.JPG", "pic15.JPG", "pic16.JPG", "pic17.JPG", "pic18.JPG", "pic19.JPG", "pic20.JPG", "pic21.JPG", "pic22.JPG", "pic23.jpg", "pic24.jpg", "pic25.jpg", "pic26.jpg", "pic27.jpg", "pic28.jpg", "pic29.jpg", "pic30.jpg", "pic31.jpg", "pic32.jpg", "pic33.jpg", "pic34.jpg", "pic35.jpg", "pic36.jpg", "pic37.jpg"];   // List your images here, ensure the path is correct.
   images.forEach((image) => spawnImage(image));
 
   document.addEventListener("click", function (e) {
