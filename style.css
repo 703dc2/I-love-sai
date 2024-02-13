@@ -20,21 +20,18 @@ html {
   height: auto;
   will-change: transform; /* Optimizes animations */
   transition: transform 2.5s ease-out; /* Smooth out the pop effect */
+  z-index: 1001;
 }
-@font-face {
-    font-family: 'BubbleLetters';
-    src: url('path/to/BubbleLetters.woff2') format('woff2'),
-         url('path/to/BubbleLetters.woff') format('woff');
-}
+
 .valentine-text {
   position: fixed;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 48px; /* Adjust size as needed */
+  font-size: 65px; /* Adjust size as needed */
   font-family: "Comic Sans MS", cursive, sans-serif; /* This font has a naturally bubbly feel */
   color: #ff69b4; /* Soft pink color, but choose any color you like */
-  text-shadow: 3px 3px 0px #ffb6c1; 
+  text-shadow: 3px 3px 0px #ffb6c1;
   /* Adds a slight shadow for a more bubbly effect */
   z-index: 1000; /* Ensure it's above other elements */
   white-space: nowrap; /* Keep the text in one line */
@@ -49,28 +46,28 @@ html {
 }
 
 .response-buttons {
-    position: fixed;
-    top: 60%; /* Adjust based on your layout */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
+  position: fixed;
+  top: 60%; /* Adjust based on your layout */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }
 
 button {
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    transition: background-color 0.3s;
+  font-size: 40px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #ffcccc;
+  background-color: #ffcccc;
 }
 
 #noButton:hover {
-    background-color: initial; /* Prevent color change on hover for 'No' button */
+  background-color: initial; /* Prevent color change on hover for 'No' button */
 }
