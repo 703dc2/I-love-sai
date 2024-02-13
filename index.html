@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>I love Sai</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="valentine-text">Will you be my valentine?</div>
     <div class="response-buttons">
-        <button id="yesButton">Yes</button>
-        <button id="noButton">No</button>
+      <button id="yesButton">Yes</button>
+      <button id="noButton">No</button>
     </div>
+    <img
+      src="pictures/catkiss.gif"
+      id="catKiss"
+      style="
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 1000;
+      "
+    />
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
