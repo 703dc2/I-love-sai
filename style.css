@@ -22,7 +22,7 @@ html {
 
 .response-buttons {
   position: fixed;
-  top: 60%; /* Adjust based on your layout */
+  top: 70%; /* Adjust based on your layout */
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -43,6 +43,22 @@ button {
 
 button:hover {
   background-color: #ffcccc;
+}
+
+.valentine-text {
+  position: fixed;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust positioning */
+  font-size: 50px; /* Increase font size */
+  font-family: "Comic Sans MS", cursive, sans-serif; /* This font has a naturally bubbly feel */
+  color: #ff69b4; /* Soft pink color, but choose any color you like */
+  text-shadow: 3px 3px 0px #ffb6c1;
+  z-index: 1000; /* Ensure it's above other elements */
+  white-space: nowrap; /* Keep the text in one line */
+  padding: 20px;
+  border-radius: 30px; /* Gives the background a bubbly appearance */
+  background-color: rgba(255, 255, 255, 0.7); /* Optional: adds a semi-transparent white background */
 }
 
 .popup {
