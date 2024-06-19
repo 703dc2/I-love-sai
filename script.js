@@ -54,6 +54,45 @@ document.addEventListener("DOMContentLoaded", () => {
       "1v1 Pictionary: Go to skribbl.io. Take turns drawing a word or phrase and guess what the other person is drawing.",
   };
 
+  const yesButton = document.getElementById("yesButton");
+  const noButton = document.getElementById("noButton");
+  const valentineText = document.querySelector(".valentine-text");
+  const catKiss = document.getElementById("catKiss"); // The GIF you want to show
+
+  yesButton.addEventListener("click", () => {
+    // Hide the text and buttons
+    valentineText.style.display = "none";
+    yesButton.style.display = "none";
+    noButton.style.display = "none";
+
+    // Show the cat kiss GIF
+    catKiss.style.display = "block";
+
+    // Redirect to date.html after showing the GIF
+    setTimeout(() => {
+      window.location.href = "date.html";
+    }, 2000); // 2000 milliseconds (2 seconds) delay
+  });
+
+  noButton.addEventListener("mouseover", () => {
+    // Control the movement to ensure the button stays within the viewport
+    let newX = noButton.offsetLeft + (Math.random() >= 0.5 ? -60 : 50); // Move left or right by 50px
+    let newY = noButton.offsetTop + (Math.random() >= 0.5 ? -60 : 50); // Move up or down by 50px
+
+    // Ensure the button doesn't go off-screen
+    newX = Math.max(
+      0,
+      Math.min(newX, window.innerWidth - noButton.offsetWidth)
+    );
+    newY = Math.max(
+      0,
+      Math.min(newY, window.innerHeight - noButton.offsetHeight)
+    );
+    noButton.style.position = "fixed";
+    noButton.style.left = `${newX}px`;
+    noButton.style.top = `${newY}px`;
+  });
+
   const popup = document.getElementById("popup");
   const popupText = document.getElementById("popupText");
   const closePopup = document.getElementById("closePopup");
