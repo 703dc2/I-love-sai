@@ -1,44 +1,78 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Spawn images pic1 through pic37 on page load
-  const images = ["pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.JPG", "pic5.JPG", "pic6.jpg", "pic7.JPG", "pic8.JPG", "pic9.JPG", "pic10.JPG", "pic11.JPG", "pic12.JPG", "pic13.JPG", "pic14.JPG", "pic15.JPG", "pic16.JPG", "pic17.JPG", "pic18.JPG", "pic19.JPG", "pic20.JPG", "pic21.JPG", "pic22.JPG", "pic23.jpg", "pic24.jpg", "pic25.jpg", "pic26.jpg", "pic27.jpg", "pic28.jpg", "pic29.jpg", "pic30.jpg", "pic31.jpg", "pic32.jpg", "pic33.jpg", "pic34.jpg", "pic35.jpg", "pic36.jpg"]; 
+  // Spawn images pic1 through pic37 on page load
+  const images = [
+    "pic1.jpg",
+    "pic2.jpg",
+    "pic3.jpg",
+    "pic4.JPG",
+    "pic5.JPG",
+    "pic6.jpg",
+    "pic7.JPG",
+    "pic8.JPG",
+    "pic9.JPG",
+    "pic10.JPG",
+    "pic11.JPG",
+    "pic12.JPG",
+    "pic13.JPG",
+    "pic14.JPG",
+    "pic15.JPG",
+    "pic16.JPG",
+    "pic17.JPG",
+    "pic18.JPG",
+    "pic19.JPG",
+    "pic20.JPG",
+    "pic21.JPG",
+    "pic22.JPG",
+    "pic23.jpg",
+    "pic24.jpg",
+    "pic25.jpg",
+    "pic26.jpg",
+    "pic27.jpg",
+    "pic28.jpg",
+    "pic29.jpg",
+    "pic30.jpg",
+    "pic31.jpg",
+    "pic32.jpg",
+    "pic33.jpg",
+    "pic34.jpg",
+    "pic35.jpg",
+    "pic36.jpg",
+  ];
   images.forEach((image) => spawnImage(image));
 
   document.addEventListener("click", function (e) {
     spawnHearts(e.clientX, e.clientY);
   });
 
-  const yesButton = document.getElementById("yesButton");
-  const noButton = document.getElementById("noButton");
-    const valentineText = document.querySelector(".valentine-text");
-    const catKiss = document.getElementById("catKiss"); // The GIF you want to show
+  const buttons = {
+    movieButton: "Continue Watching Hitman: Grab as many snacks as possible, get water and drinks, get dessert, cuddle up in bed with your plushies (pretend they are Dhruv), and watch Hitman.",
+    triviaButton:
+      "Trivia Night: Find a trivia category we like online. One of us screenshares the question. First person to text the other person buz gets to answer. If they anwer correctly they win, if not the other person gets 10 seconds to answer correctly and get 2 points!",
+    scavengerButton:
+      "Scavenger Hunt: Get a list of common household items. Put them in a random order generator. First person to find the item and bring it back to the camera wins a point.",
+    pictionaryButton:
+      "1v1 Pictionary: Go to skribbl.io. Take turns drawing a word or phrase and guess what the other person is drawing.",
+  };
 
-    yesButton.addEventListener("click", () => {
-    // Hide the text and buttons
-    valentineText.style.display = "none";
-    yesButton.style.display = "none";
-    noButton.style.display = "none";
+  const popup = document.getElementById("popup");
+  const popupText = document.getElementById("popupText");
+  const closePopup = document.getElementById("closePopup");
 
-    // Show the cat kiss GIF
-    catKiss.style.display = "block";
+  Object.keys(buttons).forEach((buttonId) => {
+    document.getElementById(buttonId).addEventListener("click", () => {
+      popupText.textContent = buttons[buttonId];
+      popup.style.display = "block";
     });
+  });
 
-  noButton.addEventListener("mouseover", () => {
-    // Control the movement to ensure the button stays within the viewport
-    let newX = noButton.offsetLeft + (Math.random() >= 0.5 ? -60 : 50); // Move left or right by 50px
-    let newY = noButton.offsetTop + (Math.random() >= 0.5 ? -60 : 50); // Move up or down by 50px
+  closePopup.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
 
-    // Ensure the button doesn't go off-screen
-    newX = Math.max(
-      -400,
-      Math.min(newX, window.innerWidth - noButton.offsetWidth)
-    );
-    newY = Math.max(
-      -400,
-      Math.min(newY, window.innerHeight - noButton.offsetHeight)
-    );
-    noButton.style.position = "fixed";
-    noButton.style.left = `${newX}px`;
-    noButton.style.top = `${newY}px`;
+  window.addEventListener("click", (event) => {
+    if (event.target == popup) {
+      popup.style.display = "none";
+    }
   });
 });
 
