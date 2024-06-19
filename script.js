@@ -46,12 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const buttons = {
     movieButton: "Continue Watching Hitman: Grab as many snacks as possible, get water and drinks, get dessert, cuddle up in bed with your plushies (pretend they are Dhruv), and watch Hitman.",
-    triviaButton:
-      "Trivia Night: Find a trivia category we like online. One of us screenshares the question. First person to text the other person buz gets to answer. If they anwer correctly they win, if not the other person gets 10 seconds to answer correctly and get 2 points!",
-    scavengerButton:
-      "Scavenger Hunt: Get a list of common household items. Put them in a random order generator. First person to find the item and bring it back to the camera wins a point.",
-    pictionaryButton:
-      "1v1 Pictionary: Go to skribbl.io. Take turns drawing a word or phrase and guess what the other person is drawing.",
+    triviaButton: "Trivia Night: Find a trivia category we like online. One of us screenshares the question. First person to text the other person buz gets to answer. If they anwer correctly they win, if not the other person gets 10 seconds to answer correctly and get 2 points!",
+    scavengerButton: "Scavenger Hunt: Get a list of common household items. Put them in a random order generator. First person to find the item and bring it back to the camera wins a point.",
+    pictionaryButton: "1v1 Pictionary: Go to skribbl.io. Take turns drawing a word or phrase and guess what the other person is drawing.",
   };
 
   const yesButton = document.getElementById("yesButton");
@@ -92,27 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
     noButton.style.left = `${newX}px`;
     noButton.style.top = `${newY}px`;
   });
-
-  const popup = document.getElementById("popup");
-  const popupText = document.getElementById("popupText");
-  const closePopup = document.getElementById("closePopup");
-
-  Object.keys(buttons).forEach((buttonId) => {
-    document.getElementById(buttonId).addEventListener("click", () => {
-      popupText.textContent = buttons[buttonId];
-      popup.style.display = "block";
-    });
-  });
-
-  closePopup.addEventListener("click", () => {
-    popup.style.display = "none";
-  });
-
-  window.addEventListener("click", (event) => {
-    if (event.target == popup) {
-      popup.style.display = "none";
-    }
-  });
 });
 
 function spawnImage(imageSrc) {
@@ -150,10 +126,7 @@ function spawnImage(imageSrc) {
   // Pause animation on hover.
   image.addEventListener("mouseenter", () => (fallRate = 0));
   image.addEventListener("click", () => (fallRate = 0));
-  image.addEventListener(
-    "mouseleave",
-    () => (fallRate = 0.2 + Math.random() * 0.9)
-  );
+  image.addEventListener("mouseleave", () => (fallRate = 0.2 + Math.random() * 0.9));
 }
 
 function spawnHearts(x, y) {
